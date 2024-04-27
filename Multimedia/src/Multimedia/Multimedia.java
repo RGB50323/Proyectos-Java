@@ -1,5 +1,7 @@
 package Multimedia;
 
+import javax.xml.datatype.Duration;
+
 public class Multimedia {
 
     private final Formato formato;
@@ -8,7 +10,7 @@ public class Multimedia {
     private duration time;
 
 
-    public Multimedia(String title, String author, int minute, int second, Formato formato) {
+    public Multimedia(String title, String author, int minute, int second, Formato formato ) {
         this.title = title;
         this.author = author;
         this.time = new duration(minute, second);
@@ -45,21 +47,21 @@ public class Multimedia {
         return formato;
     }
 
-//    @Override
-//    public String toString() {
-//        return "Datos -> " + " title ='" + title + '\'' +
-//                ", author = '" + author + '\'' +
-//                ", duration = '" + time + '\'' +
-//                ", formato ----> '" + formato + '\'' +
-//                '}';
-//    }
-//
-//    public String equalsAuthorTitle() {
-//        if (getAuthor().equals(getTitle())){
-//            return "Author and title are the same";
-//        } else {
-//            return "Different author and title";
-//        }
-//    }
+    @Override
+    public String toString() {
+        return "Datos -> " + " title ='" + title + '\'' +
+                ", author = '" + author + '\'' +
+                ", duration = '" + time + '\'' +
+                ", formato ----> '" + formato + '\'' +
+                '}';
+    }
+
+    public String equalsAuthorTitle() {
+        if (getAuthor().equals(getTitle())){
+            return "Author and title are the same";
+        } else {
+            return "Different author and title";
+        }
+    }
 
 }
